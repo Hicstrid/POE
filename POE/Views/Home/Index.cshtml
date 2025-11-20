@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+</div>
+<div class="text-center">
+<!-- Login Form/Page -->
+<form action="/action_page.php">
+    <label for="fname">Username:</label>
+    <input type="text" id="username" name="username" size="50"><br>
+    <label for="fname">Password:</label><br>
+    <input type="text" id="password" name="password" size="50"><br >
+    <input type="submit" value="Submit">
+</form>
+<br />
+<a asp-controller="Home" asp-action="Registration">
+    If you are new then please click here to Register
+</a>
+</div>

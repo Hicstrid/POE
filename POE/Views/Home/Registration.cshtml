@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Registration Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="text-center">
+<form asp-controller="Home" asp-action="Register" method="post">
+
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="Name" size="50"><br> <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="Surname" size="50"><br> <label for="email">Email address:</label><br>
+    <input type="text" id="email" name="Email" size="50"><br> <label for="username">Username:</label><br>
+    <input type="text" id="username" name="Username" size="50"><br> <label for="password">Password:</label><br>
+    <input type="password" id="password" name="Password" size="50"><br> <input type="submit" value="Submit">
+    <br />
+    <label for="roles">Role:</label>
+    <select name="myDropdown" id="myDropdown">
+        <option value="option1">Lecturer</option>
+        <option value="option2">Programme Coordinator/Academic Manager</option>
+    </select>
+</form>
+</div>
+
