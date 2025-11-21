@@ -1,25 +1,74 @@
-﻿@{
+﻿@model POE.Models.User
+
+@{
     ViewData["Title"] = "Registration Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
-<div class="text-center">
-<form asp-controller="Home" asp-action="Register" method="post">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="card-title mb-0">Create Account</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-controller="Home" asp-action="Register" method="post">
+                        <div class="form-group mb-3">
+                            <label asp-for="Name" class="form-label">First name:</label>
+                            <input asp-for="Name" type="text" class="form-control" required />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
 
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="Name" size="50"><br> <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="Surname" size="50"><br> <label for="email">Email address:</label><br>
-    <input type="text" id="email" name="Email" size="50"><br> <label for="username">Username:</label><br>
-    <input type="text" id="username" name="Username" size="50"><br> <label for="password">Password:</label><br>
-    <input type="password" id="password" name="Password" size="50"><br> <input type="submit" value="Submit">
-    <br />
-    <label for="roles">Role:</label>
-    <select name="myDropdown" id="myDropdown">
-        <option value="option1">Lecturer</option>
-        <option value="option2">Programme Coordinator/Academic Manager</option>
-    </select>
-</form>
+                        <div class="form-group mb-3">
+                            <label asp-for="Surname" class="form-label">Last name:</label>
+                            <input asp-for="Surname" type="text" class="form-control" required />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="email" class="form-label">Email:</label>
+                            <input asp-for="email" type="email" class="form-control" required />
+                            <span asp-validation-for="email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="username" class="form-label">Username:</label>
+                            <input asp-for="username" type="text" class="form-control" required />
+                            <span asp-validation-for="username" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="password" class="form-label">Password:</label>
+                            <input asp-for="password" type="password" class="form-control" required />
+                            <span asp-validation-for="password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="role" class="form-label">Role:</label>
+                            <select asp-for="role" class="form-select" required>
+                                <option value="">Select Role</option>
+                                <option value="Lecturer">Lecturer</option>
+                                <option value="Programme Coordinator">Programme Coordinator</option>
+                                <option value="Academic Manager">Academic Manager</option>
+                            </select>
+                            <span asp-validation-for="role" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Create Account</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <p>Already have an account? <a asp-controller="Home" asp-action="Index" class="text-decoration-none">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
 
