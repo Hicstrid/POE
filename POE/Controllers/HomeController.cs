@@ -59,7 +59,7 @@ namespace POE.Controllers
                         Console.WriteLine($"Login SUCCESS - UserId: {userId}, Role: {role}");
                         Console.WriteLine($"Redirecting to Claims/SubmitClaim...");
 
-                        return RedirectToAction("TestRedirect", "Home");
+                        return RedirectToAction("SubmitClaim", "Claims");
                     }
                 }
 
