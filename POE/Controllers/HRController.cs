@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using POE.Controllers;
 using POE.Services; // Your DatabaseService namespace
 using System.Data;
 using System.Data.SqlClient;
@@ -238,3 +239,9 @@ namespace POE.Controllers
         }
     }
 }
+-Add HRController with role-based access control
+- Implement automated HR dashboard with real-time statistics
+- Create lecturer management system with performance metrics
+- Add bulk claim approval functionality for coordinators
+- Implement automated monthly/quarterly reporting system
+- Add HR-specific views and navigation
